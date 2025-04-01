@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Studio Ligjore Rasim Rama</title>
+    <style>
+        /* Stili i Përgjithshëm */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            font-size: 16px;
+            
+            color: black;
+            background-image: url(https://www.officinedellaliberta.it/wp-content/uploads/2020/12/giustizia-bilancia.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Koka */
+        header {
+            background-color: #333333;
+            color: #fff;
+            padding: 2px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            letter-spacing: 4.5px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            font-size: 18px;
+            padding: 0px;
+            transition: color 0.3s;
+            letter-spacing: 5px;
+        }
+
+        nav ul li a:hover {
+            color:#ff5722 ;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+
+        /* Seksioni Hero */
+        .hero {
+            background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-size: cover;
+        }
+
+        .hero-content {
+            background-color: #333333;
+            padding: 40px 20px;
+            border-radius: 10px;
+            max-width: 700px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color:burlywood;
+            color: rgb(0, 0, 0);
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Seksioni Rreth Nesh */
+        .about {
+            background-color: #ffffff;
+            padding: 80px 20px;
+        }
+
+        .about h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            font-weight: 700;
+        }
+
+        .about p {
+            text-align: center;
+            font-size: 18px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Seksioni Shërbimet */
+        .services {
+            background-color: rgb(255, 255, 255);
+            padding: 80px 20px;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .services .service-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-item {
+            background-color: #f4f4f4;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgb(183, 143, 90);
+            flex: 1 1 calc(33.333% - 30px);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-item h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .service-item p {
+            font-size: 18px;
+            color: #777;
+        }
+
+        /* Seksioni Kontakt */
+        .contact {
+            background-color: #f8f8f8;
+            padding: 80px 20px;
+        }
+
+        .contact h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            outline: none;
+        }
+
+        .contact button {
+            background-color: #ff5722;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #e64a19;
+        }
+
+        /* Fundi */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer p {
+            font-size: 16px;
+        }
+
+        /* Adaptueshmëria */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .service-item {
+                flex: 1 1 100%;
+            }
+        }
+        .footer {
+    background-color: #222;
+    color: #fff;
+}
+
+.footer-logo {
+    width: 100px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.social-icon img {
+    width: 30px;
+    margin-right: 10px;
+}
+.review-section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: white;
+}
+
+.review-box {
+    background: #ddd;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.review-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.stars {
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.client-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+    color: #333;
+}
+
+.quote {
+    font-style: italic;
+    color: #555;
+}
+
+.quote-icon {
+    font-size: 20px;
+    color: #ffffff;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.whatsapp-button {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            font-size: 30px;
+            z-index: 1000;
+        }
+        .whatsapp-button:hover {
+            background-color: #1ebe5d;
+        }
+    </style>
+</head>
+
+    <title>Footer me Bootstrap</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review të Klientëve</title>
+    
+
+    <body>
+       
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WhatsApp Floating Button</title>
+    <!-- Navigimi -->
+    <header>
+       
+        <nav>
+            <div class="logo">
+                <h1>Studio Ligjore Rasim Rama</h1>
+            </div>
+            <center><img width="120px" src="./Nuova cartella/Studio Ligjore.png" alt=""></center>
+            <ul>
+                <li><a href="prov.html">Kryefaqe</a></li>
+                <li><a href="ceshtjet.html">Çështjet</a></li>
+                <li><a href="kontakto.html">Kontakto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seksioni Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Shërbime Ligjore</h2>
+        <p>Vendodhja:Rruga Aleksander Goga Lagja nr.9 </p>
+        <p>Kontakto 0673882431 </p>
+        <p>studioligjorerasimrama@gmail.com </p>
+        <a href="https://wa.me/355673882431" class="cta-button">Na Kontaktoni</a>
+        </div>
+    </section>
+
+    <!-- Seksioni Rreth Nesh -->
+    <section class="about" id="about">
+        <h2>Rreth Nesh</h2>
+        <p>Me shumë vite përvojë në ofrimin e shërbimeve ligjore, studioja jonë ka ndërtuar një reputacion për ofrimin e këshillave të specializuara, përfaqësimit ligjor dhe sigurisë për klientët nga të gjitha shtresat e jetës. Nëse po përballeni me çështje Administrative familjare,Civile,Penale,Tregtare, ne jemi këtu për t'ju ndihmuar.</p>
+    </section>
+
+    <!-- Seksioni Shërbimet -->
+    <section class="services" id="services">
+        <h2>Shërbimet Tona</h2>
+        <div class="service-container">
+            <div class="service-item">
+                <h3>Civile</h3>
+                <p>Ne ofrojmë përfaqësim efektiv në gjykatë për të siguruar që të drejtat tuaja të mbrohen.</p>
+            </div>
+            <div class="service-item">
+                <h3>Penale</h3>
+                <p>Ne ofrojmë përfaqësim efektiv në gjykatë për të siguruar që të drejtat tuaja të mbrohen.</p>
+            </div>
+            <div class="service-item">
+                <h3>Familjare</h3>
+                <p>Ne ofrojmë përfaqësim efektiv në gjykatë për të siguruar që të drejtat tuaja të mbrohen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="review-section">
+        <div class="container">
+            <h2 class="mb-5 text-primary">Cfare Thojne Klientet Tone</h2>
+            <div class="row g-4">
+                
+                <!-- Review 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="review-box">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </p>
+                        <p class="quote">"Një ekip avokatësh të përkushtuar dhe profesionistë. Shumë të kënaqur me shërbimin!"</p>
+                        <p class="client-name">Elona B.</p>
+                        <p> ⭐⭐⭐⭐⭐</p>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="review-box">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </p>
+                        <p class="quote">"Shërbim korrekt dhe i shpejtë! I rekomandoj për çdo çështje ligjore."</p>
+                        <p class="client-name">Ardian T.</p>
+                        <p> ⭐⭐⭐⭐⭐</p>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="review-box">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </p>
+                        <p class="quote">"Shumë të vëmendshëm ndaj klientëve dhe çdo çështje e trajtuar me profesionalizëm."</p>
+                        <p class="client-name">Silva K.</p>
+                        <p> ⭐⭐⭐⭐⭐</p>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="review-box">
+                        <i class="fas fa-quote-right quote-icon"></i>
+                        <p class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </p>
+                        <p class="quote">"Një ekip që di si të mbrojë të drejtat tuaja. Fantastikë!"</p>
+                        <p class="client-name">Ervin M.</p>
+                        <p> ⭐⭐⭐⭐⭐</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <a href="https://wa.me/355673882431" class="whatsapp-button" target="_blank">
+        &#x1F4AC;
+    </a>
+    
+    <footer class="footer bg-dark text-light py-4">
+        <div class="container">
+            <div class="row">
+                <!-- Kolona 1 - Logo dhe Përshkrimi -->
+                <div class="col-md-4">
+                    <img src="./Nuova cartella/Studio Ligjore.png" alt="Logo" class="footer-logo mb-2">
+                   
+                </div>
+
+                <!-- Kolona 2 - Menu -->
+                <div class="col-md-4">
+                    <h5>Menu</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Faqja Kryesore</a></li>
+                        <li><a href="#">Rreth Nesh</a></li>
+                        <li><a href="#">Sherbimet</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <!-- Kolona 3 - Social Media -->
+                <div class="col-md-4">
+                    <h5>Na ndiqni</h5>
+                    <a href="#" class="social-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/768px-Facebook_Logo_%282019%29.png" alt="Facebook"></a>
+                    <a href="#" class="social-icon"><img src="https://static.vecteezy.com/system/resources/previews/016/716/467/non_2x/twitter-icon-free-png.png" alt="Twitter"></a>
+                    <a href="#" class="social-icon"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/768px-Instagram_icon.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Rrëshqitje e butë për Navigim
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+        
+</body>
+
+</html>
